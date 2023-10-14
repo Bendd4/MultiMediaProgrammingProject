@@ -1,0 +1,504 @@
+html {
+  /* scroll-behavior: smooth; */
+  font-family: 'IBM Plex Sans Thai Looped', sans-serif;
+  /* font-family: 'Prompt', sans-serif; */
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+body {
+  /* ตรงนี้สี อย่าเเตะ ขก.เเก้ */
+  margin: 0;
+  background-color: hsl(33, 95%, 92%);
+  /* background: linear-gradient(hsl(33, 95%, 92%),white, #000000); */
+  overflow-x: hidden;
+}
+
+::-webkit-scrollbar {
+  background-color: hsla(0, 0%, 0%, 0);
+  width: 10px;
+  /* border-radius: 10px; */
+}
+
+::-webkit-scrollbar-track {
+  background-color: hsl(34, 89%, 79%);
+  /* background-color: black; */
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: hsl(34, 95%, 56%);
+  border-radius: 10px;
+}
+
+/* -------------------------
+page1
+------------------ */
+
+#page1 {
+  position: relative;
+  /* height: 300%; */
+  /* background-color: #f2f8c9; */
+  justify-content: center;
+  /* align-items: 50vh; */
+}
+
+#logo-down {
+  /* background-color: #fff700; */
+  height: 200vh;
+  position: relative;
+  justify-content: center;
+  /* padding-bottom: -50vh; */
+}
+
+#logo-down img {
+  width: 30vw;
+}
+
+#logo {
+  display: flex;
+  z-index: 0;
+  justify-content: center;
+  height: min-content;
+  position: sticky;
+  top: calc(50vh - (30vw / 2));
+}
+
+.shake {
+  position: relative;
+  animation: logomove 5s infinite;
+}
+
+@keyframes logomove {
+  50% {
+    transform: rotate(15deg);
+  }
+
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+#first-fridge {
+  /* background-color: #ff0000; */
+  background-image: linear-gradient(hsla(33, 95%, 92%, 0) 0%, hsla(33, 95%, 92%, 100) 20%, hsla(33, 95%, 92%, 100) 80%, white);
+  /* background-color: linear-gradient(rgb(0,0,0)); */
+  /* position: absolute;
+  top: 120vh; */
+  margin-top: -85vh;
+  max-height: 125vw;
+  min-height: 120vw;
+  height: 100vh;
+  justify-content: center;
+  position: relative;
+
+}
+
+#shelf {
+  width: 90%;
+  /* height: 90%; */
+  display: block;
+  left: calc(48vw - (90% / 2));
+  top: 10%;
+}
+
+#food {
+  width: 90%;
+  display: block;
+  left: calc(50vw - (90% / 2));
+  top: 10.8%;
+}
+
+#unlock_fridge:hover {
+  cursor: pointer;
+  transform: scale(1.05) translatey(-5%);
+}
+
+.fridge {
+  --fridgeW: 20vw;
+  width: var(--fridgeW);
+  height: auto;
+  text-align: center;
+  left: calc(51.5vw - (var(--fridgeW) / 2));
+  top: 13.5%;
+}
+
+#tile {
+  z-index: 0;
+  width: 100vw;
+  height: auto;
+  display: block;
+  top: 23%;
+}
+
+#Lshelf {
+  height: 46.5%;
+  display: block;
+  left: 0;
+  top: 9%;
+  /* top: 0; */
+}
+
+#Rshelf {
+  height: 45.5%;
+  display: block;
+  right: 0;
+  top: 10%;
+  /* top: 0; */
+}
+
+/* -------------------------
+end page1
+------------------ */
+
+
+/* -------------------------
+page2
+------------------ */
+
+#page2 {
+  height: 260vh;
+  max-height: 200vw;
+  min-height: 150vw;
+  /* background-color: #b1b5f7; */
+  /* display: grid;
+  grid-template-columns: repeat(3, 1fr); */
+  background: linear-gradient(white, black);
+  /* background-color: black; */
+  justify-content: center;
+}
+
+#allTrash {
+  height: 120vh;
+  overflow-y: hidden;
+  max-height: 190vw;
+  min-height: 150vw;
+}
+
+.Binbag {
+  height: 200vh;
+  overflow-y: hidden;
+  overflow-x: hidden;
+  max-height: 140vw;
+  min-height: 100vw;
+  margin-top: -20%;
+  transition: 1s;
+}
+
+#page2_Text {
+  /* display: flex; */
+  position: absolute;
+  width: 100vw;
+  overflow-x: hidden;
+  /* left: 50%; */
+  justify-content: center;
+  text-align: center;
+  margin-top: 40%;
+  font-size: 3rem;
+  cursor: pointer;
+  transition: opacity 0.5s ease-in-out;
+  color: white;
+}
+
+
+/* -------------------------
+end page2
+------------------ */
+
+/* -------------------------
+page3
+------------------ */
+
+#page3 {
+  height: 150vh;
+
+  justify-content: center;
+  color: white;
+  background: linear-gradient(hsl(240, 7%, 3%) 50%, hsl(33, 95%, 92%));
+  background-size: cover;
+}
+
+
+/* -------------------------
+end page3
+------------------ */
+
+
+
+
+
+
+#pagedownload {
+  height: 100vh;
+  justify-content: center;
+  background-image: linear-gradient(#fffefe, green)
+    /* #e5ba8a */
+}
+
+.pic {
+  background-size: cover;
+  position: absolute;
+}
+
+
+
+
+
+
+.img-container {
+  height: min-content;
+}
+
+
+
+#logo_black {
+  width: 100%;
+}
+
+
+
+.centered {
+  height: 100%;
+  font-size: 5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+
+* ------------------ page 4 ----------------- */ #page4 {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* background-image: linear-gradient(#fffefe, maroon) */
+  /* #e5ba8a */
+}
+
+#infograph {
+  height: 100%;
+  /* width: 100%; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#cartinfo {
+  width: 700px;
+  /* opacity: 0;
+  transition: opacity 0.5s ease-in-out; */
+  /* display: block;  */
+  /* left: calc(50vw - (66% / 2)); */
+}
+
+.textcart {
+  color: #704123;
+  left: -167px;
+  top: -167px;
+  position: relative;
+
+}
+
+.textcart2 {
+  color: #704123;
+  left: 170px;
+  top: -5px;
+  position: relative;
+
+}
+
+
+.page4_bottom_txt {
+  font-size: 1.1rem;
+  margin: 0;
+
+}
+
+.page4_top_right_txt {
+  font-size: 3rem;
+  margin: 0;
+  text-align: end;
+}
+
+.page4_top_left_txt {
+
+  font-size: 3rem;
+  margin: 0;
+
+}
+
+@media only screen and (max-width: 720px) {
+
+  #cartinfo {
+    width: 400px;
+    /* opacity: 0;
+  transition: opacity 0.5s ease-in-out; */
+    /* display: block;  */
+    /* left: calc(50vw - (66% / 2)); */
+  }
+
+  .textcart {
+    color: #704123;
+    left: -87px;
+    top: -115px;
+    position: relative;
+
+  }
+
+  .textcart2 {
+    color: #704123;
+    left: 87px;
+    top: -23px;
+    position: relative;
+
+  }
+
+
+  .page4_bottom_txt {
+    font-size: 0.7rem;
+    margin: 0;
+
+  }
+
+  .page4_top_right_txt {
+    font-size: 3rem;
+    margin: 0;
+    text-align: end;
+  }
+
+  .page4_top_left_txt {
+
+    font-size: 3rem;
+    margin: 0;
+
+  }
+}
+
+@media only screen and (max-width: 530px) {
+  #cartinfo {
+    width: 300px;
+
+  }
+
+  .textcart {
+    color: #704123;
+    left: -55px;
+    top: -90px;
+    position: relative;
+
+  }
+
+  .textcart2 {
+    color: #704123;
+    left: 55px;
+    top: -19px;
+    position: relative;
+
+  }
+
+
+  .page4_bottom_txt {
+    font-size: 0.6rem;
+    margin: 0;
+
+  }
+
+  .page4_top_right_txt {
+    font-size: 2.5rem;
+    margin: 0;
+
+    text-align: end;
+  }
+
+  .page4_top_left_txt {
+    font-size: 2.5rem;
+    margin: 0;
+
+  }
+}
+
+/* ------------------
+ end page 4 
+----------------- */
+
+
+/* ------------------
+page 5 
+----------------- */
+
+#page5 {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+
+#page5_Text {
+  font-size: 3rem;
+  cursor: pointer;
+  transition: opacity 0.5s ease-in-out;
+  color: #704123;
+  text-align: center;
+  /* padding: 10px; */
+}
+
+/* ------------------
+ end page 5
+----------------- */
+
+
+
+/* Media Query section */
+@media only screen and (max-width: 500px) {
+  #first-fridge {
+    min-height: 200vw;
+    max-height: 210vw;
+  }
+
+  #shelf {
+    visibility: hidden;
+  }
+
+  .fridge {
+    --fridgeW: 50vw;
+  }
+
+  #food {
+    visibility: hidden;
+  }
+}
+
+.stop-scrolling {
+  height: 100%;
+  overflow: hidden;
+}
+
+/* ทำรูปของต้นน้ำ */
+.bounce {
+  transition: transform 0.2s ease, opacity 1s ease;
+}
+
+.image-container {
+  position: relative;
+  width: 300px;
+  height: 100%;
+  cursor: pointer;
+}
+
+/* #animatedImage {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0;
+  /* ตั้งค่าความคมชัดเริ่มต้นเป็น 0 */
+transition: opacity 0.5s ease-in-out;
+/* ใช้ transition เพื่อทำแอนิเมชันของความคมชัด */
+}
+
+*/

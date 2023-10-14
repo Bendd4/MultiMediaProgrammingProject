@@ -1,0 +1,166 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js"></script>
+  <title>Left Over</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai+Looped&family=Prompt&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/x-icon" href="img file/favicon-icon.png">
+</head>
+
+<body data-y="0" data-h="0">
+  <!-- หน้าเริ่ม -->
+
+  <!-- หน้า 1 ตู้เย็น -->
+  <section id="page1">
+    <!-- ส่วนโลโก้ขยับ -->
+    <section id="logo-down">
+      <div id="logo">
+        <img src="img file/Logo_Main.png" alt="" width="400" class="shake">
+      </div>
+    </section>
+
+    <!-- ส่วนตู้เย็นและชั้น -->
+    <section id="first-fridge">
+      <div>
+        <img src="img file/page_1/BG_Tile.png" class="pic" id="tile">
+      </div>
+      <div>
+        <img src="img file/Kitchen_Shelf.png" class="pic" id="shelf">
+      </div>
+      <div>
+        <img src="img file/Kitchen_Food.png" class="pic" id="food">
+      </div>
+      <div>
+        <img src="img file/page_1/Refrigerator (in).png" class="pic unlockButton fridge">
+        <img src="img file/page_1/Refrigerator-(out).png" class="pic unlockButton fridge bounce" id="unlock_fridge" onclick="bounceAndDisappear()">
+          <!-- <img src="img file/Kitchen_Refrigerator-(1).png" class="pic unlockButton" id="fridge"
+            onclick="changeImage('img file/Kitchen_Refrigerator-test.png')"> -->
+          <!-- <div class="pic" id="fridge" onclick="changeImage('img file/Kitchen_Refrigerator-test.png')"> -->
+      </div>
+      <div>
+        <img src="img file/page_1/BG_Left.png" class="pic" id="Lshelf">
+      </div>
+      <div>
+        <img src="img file/page_1/BG_Right.png" class="pic" id="Rshelf">
+      </div>
+    </section>
+
+  </section>
+
+
+  <!-- หน้า 2 ขยะโรยราย + ถุงขยะ -->
+  <section id="page2">
+    <div id="allTrash">
+      <img src="img file/page_3/Trash_many.png" style="width:100%;">
+      <img src="img file/page_3/Trash_old.png" style="width:100%;">
+    </div>
+    <div id="Binbag" class="Binbag" onclick="up()">
+      <img src="img file/page_3/Bin Bag (top).png" id="unlock_bin" style="width:100%;">
+        <div id="page2_Text" onclick="changeText1()">
+          รู้ไหมว่าขยะพวกนี้มาจากไหน ?
+          <p style="font-size: 0.3em;">กดเพื่อไปต่อ</p>
+        </div>
+      <img src="img file/page_3/Bin Bag.jpg" style="width:100%; height: 210vh; overflow-y: hidden;">
+    </div>
+
+
+  </section>
+
+
+  <!-- หน้า 3 buffer zone -->
+  <section id="page3">
+    <!-- <img src="img file/Logo_Black.png" id="logo_black"> -->
+
+    <!-- <img src="img file/page_3/Plastic_Bag.png" id="logo_black">  -->
+  </section>
+
+  <!-- หน้า 4 infographic -->
+  <section id="page4">
+    <div id="infograph">
+      <div class="textcart">
+        <h1 class="page4_top_left_txt">64%</h1>
+        <p class="page4_bottom_txt">กองอาหารเหลือในตู้เย็น</p>
+      </div>
+      <div class="textcart2">
+        <h1 class="page4_top_right_txt">36%</h1>
+        <p class="page4_bottom_txt">อาหารที่เรารับประทาน</p>
+      </div>
+
+      <img src="img file/Infographic_food.png" class="pic" id="cartinfo">
+    </div>
+  </section>
+
+
+  
+<!-- หน้า 5 ........... -->
+  <section id="page5">
+    <div id="page5_Text" onclick="changeText2()">
+      "เหลือดีกว่าขาด"
+      <p style="font-size: 0.3em;">กดเพื่อไปต่อ</p>
+    </div>
+  </section>
+  <script type="text/javascript">
+		// 	document.body.dataset.h = window.innerHeight
+		// 	document.addEventListener("scroll", setBodyScrollPosition);
+		// 	function setBodyScrollPosition(){
+		// 	document.body.dataset.y = window.scrollY
+		// }
+    
+  //   let stop = ['fridge', 'allTrash', 'infograph']
+  //   let stopnum = 0;
+		// document.addEventListener("scroll", setBar);
+  //   let getID = document.getElementById(stop[stopnum])
+  //   let ID_rect = '';
+		
+  //   function setBar(){
+  //     console.log(stop[stopnum]);
+  //     let getID = document.getElementById(stop[stopnum])
+  //     let ID_rect = getID.getBoundingClientRect().bottom;
+  //     let topWithOffset = ID_rect - parseInt(document.body.dataset.h)
+  //     if (topWithOffset <= 0) {
+  //       console.log('yes')
+  //       console.log(stopnum)
+  //       if (stop.length - 1 > stopnum){
+  //         stopnum++;
+  //       }
+		// 	}
+  //     else{
+		// 	 console.log('no')
+  //       // ปรับให้มัน scroll ได้เหมือนเดิม, กัน bug
+		// 	}
+		// }
+		// setBar()
+    
+    // Scroll locking vvvv
+    // document.addEventListener('DOMContentLoaded', () => {
+    //   let isScrollLocked = true;
+    
+    //   // ล็อกการเลื่อนหน้าจอที่ระดับนึง
+    //   const lockPosition = ID_rect
+    //   window.addEventListener('scroll', () => {
+    //     if (isScrollLocked && window.scrollY >= lockPosition) {
+    //       window.scrollTo(0, lockPosition);
+    //     }
+    //   });
+    
+    //   // ปลดล็อกเมื่อคลิกที่ปุ่ม
+    //   const unlockButton = document.getElementById('unlockButton');
+    //   unlockButton.addEventListener('click', () => {
+    //     isScrollLocked = false;
+    //   });
+    // });
+    // End Scroll locking ^^^^
+    
+
+
+
+	</script>
+  
+</body>
+
+</html>

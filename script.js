@@ -72,13 +72,21 @@ function initiateSmoothScroll() {
   }, 1000);
 }
 
-
 function up() {
-  let bin = document.getElementById("Binbag");
+  const bin = document.getElementById("Binbag");
+  // const audio = document.getElementById("trash-bag-audio");
+  // // Play the audio when the function is called
+  // audio.play();
+  const audio = document.getElementById("trash-bag-audio");
+
+  if (audio) {
+    audio.play();
+    audio.onended = function() {
+      audio.remove(); // ลบเสียงเมื่อเล่นเสร็จ
+    }
+  }
   bin.style.transform = 'translateY(-70%)';
-
 }
-
 
 
 
@@ -98,9 +106,10 @@ function up() {
 // ล็อกหน้าจอ ถุงขยะ
 document.addEventListener('DOMContentLoaded', () => {
   let isScrollLocked = true;
+  
 
   // ล็อกการเลื่อนหน้าจอที่ระดับนึง
-  const lockPosition = window.innerHeight * 5.8;
+  const lockPosition = window.innerHeight * 5.5;
   window.addEventListener('scroll', () => {
     if (isScrollLocked && window.scrollY >= lockPosition) {
       window.scrollTo(0, lockPosition);
@@ -114,12 +123,13 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 
+
 // ล็อกหน้าจอ ตู้เย็น
 document.addEventListener('DOMContentLoaded', () => {
   let isScrollLocked = true;
 
   // ล็อกการเลื่อนหน้าจอที่ระดับนึง
-  const lockPosition = window.innerHeight * 1.45;
+  const lockPosition = window.innerHeight * 1.1;
   window.addEventListener('scroll', () => {
     if (isScrollLocked && window.scrollY >= lockPosition) {
       window.scrollTo(0, lockPosition);
@@ -127,25 +137,37 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // ปลดล็อกเมื่อคลิกที่ปุ่ม
-  const unlock_frige = document.getElementById('unlock_fridge');
+  // const unlock_frige = document.getElementById('unlock_fridge');
+  const unlock_frige = document.querySelector('.bounce');
   unlock_frige.addEventListener('click', () => {
     isScrollLocked = false;
   });
 });
 
-// ฝาตู้เย็นหาย
 
+// ฝาตู้เย็นหาย
 function bounceAndDisappear() {
-      const image = document.querySelector('.bounce');
-      image.style.transform = 'scale(1.2)';
+  const hitbox = document.querySelector('.bounce');
+  const audio = document.getElementById('fridge-open-audio');
+
+  // Add a click event listener to the image
+  hitbox.addEventListener('click', () => {
+    image = document.querySelector('#unlock_fridge');
+    image.style.transform = 'scale(1.2)';
+
+    audio.play(); // Play the audio when the click event occurs
+
+    setTimeout(() => {
+      image.style.opacity = '0';
+      image.style.transform = 'scale(0.8)';
+      document.querySelector('#hotpoint1').style.opacity = "0%";
       setTimeout(() => {
-        image.style.opacity = '0';
-        image.style.transform = 'scale(0.8)';
-        setTimeout(() => {
-          image.style.display = 'none';
-        }, 1000); // 1000 milliseconds (1 second)
-      }, 200); // 200 milliseconds
-    }
+        image.style.display = 'none';
+        document.querySelector('#hotpoint1').style.display = 'none';
+      }, 1000); // 1000 milliseconds (1 second)
+    }, 200); // 200 milliseconds
+  });
+}
 
 
 // const animatedImage = document.getElementById('animatedImage');
@@ -161,3 +183,18 @@ function bounceAndDisappear() {
 //         animatedImage.style.opacity = '0';
 //     }
 // });
+
+
+    // Open the Modal
+function openModal(imgElement) {
+    var modal = document.getElementById("image-modal");
+    var modalImg = document.getElementById("img01");
+    modal.style.display = "block";
+    modalImg.src = imgElement.src;
+}
+
+// Close the Modal
+function closeModal() {
+    var modal = document.getElementById("image-modal");
+    modal.style.display = "none";
+}

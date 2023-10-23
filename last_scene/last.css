@@ -1,0 +1,264 @@
+html {
+  /* scroll-behavior: smooth; */
+  font-family: 'IBM Plex Sans Thai Looped', sans-serif;
+  /* font-family: 'Prompt', sans-serif; */
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+
+body {
+  /* ตรงนี้สี อย่าเเตะ ขก.เเก้ */
+  margin: 0;
+  background-color: hsl(33, 95%, 92%);
+  /* background: linear-gradient(hsl(33, 95%, 92%),white, #000000); */
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+
+#body-wrapper{
+  /* ป้องกัน scroll ด้านข้างของโทรศัพท์ */
+  overflow-x: hidden;
+}
+
+::-webkit-scrollbar {
+  background-color: hsla(0, 0%, 0%, 0);
+  width: 10px;
+  /* border-radius: 10px; */
+}
+
+::-webkit-scrollbar-track {
+  background-color: hsl(34, 89%, 79%);
+  /* background-color: black; */
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: hsl(34, 95%, 56%);
+  border-radius: 10px;
+}
+
+/* -------------------------
+page1
+------------------ */
+
+#page1 {
+  position: relative;
+  /* height: 300%; */
+  /* background-color: #f2f8c9; */
+  /* align-items: 50vh; */
+  
+}
+
+
+
+#first-fridge {
+  /* background-image: linear-gradient(hsla(33, 95%, 92%, 0) 0%, hsla(33, 95%, 92%, 100) 20%, hsla(33, 95%, 92%, 100) 80%, white); */
+  background-color: hsl(33, 95%, 92%);
+  /* margin-top: calc(var(--fridge-w) * 0.1); */
+  height: 100vh;
+  
+  position: relative;
+  box-shadow: 0px 0px 90px 10vw hsla(33, 95%, 92%, 10);
+  top: 0%;
+  /* -webkit-box-shadow: 0px -50vw 90px 100vw hsla(33, 95%, 92%, 100);
+  -moz-box-shadow: 0px -50vw 90px 10vw hsla(33, 95%, 92%, 100); */
+
+  --fridge-w: 361px;
+  /* --shelf-w: calc(4012px * 0.35); */
+  /* --shelf-h: calc(2262px * 0.35); */
+  --shelf-w: calc(var(--fridge-w) * 5.32);
+  --shelf-h: calc(var(--fridge-w) * 3);
+}
+
+#unlock_fridge{
+  transition: 0.3s;
+}
+
+.background{
+  width: calc(var(--shelf-w) * 1.5);
+  height: calc(var(--shelf-h) * 0.8);
+  position: absolute;
+  left: calc(50vw - ((var(--shelf-w) * 1.5) / 2));
+  /* bottom: 5%; */
+  background-image: url('img_last/BG.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: var(--shelf-w) var(--shelf-h);
+  transition:0.3s;
+}
+.shelf-background{
+  width: calc(var(--shelf-w) * 1.5);
+  height: calc(var(--shelf-h) * 0.8);
+  position: absolute;
+  left: calc(50vw - ((var(--shelf-w) * 1.5) / 2));
+  /* bottom: 5%; */
+  background-image: url('img_last/Organize-01.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: var(--shelf-w) var(--shelf-h);
+  transition:0.3s;
+}
+
+/* .shelf-container{
+  width: calc(var(--shelf-w) * 1.5);
+  height: calc(var(--shelf-h) * 1);
+  position: absolute;
+  left: calc(50vw - ((var(--shelf-w) * 1.5) / 2));
+  background-image: url('img file/page_1/Kitchen.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: var(--shelf-w) var(--shelf-h); */
+
+  /* background-size: cover; */
+
+
+  /* max-width: 1920px; */
+  /* max-height: auto; */
+
+  /* overflow: hidden; */
+}
+
+.shelf-container img{
+  width: 100%;
+  height: auto;
+}
+
+#shelf{
+  /* --imgw: 4012;
+  --imgh: 2262;
+  width: 1920px;
+  height: 50%; */
+  /* min-height: calc(100vw * var(--imgh) / var(--imgw)); */
+  /* height: 90%; */
+  /* display: block; */
+  /* background-attachment: fixed; */
+  /* left: calc(48vw - (90% / 2)); */
+  /* top: 13.9%; */
+}
+
+.fridge {
+  /* --fridgeW: calc(var(--shelf-w) * 0.2); */
+  width: var(--fridge-w);
+  height: auto;
+  /* text-align: center; */
+  /* bottom: 5%; */
+  top: calc(11.6vh - ((var(--fridge-w) / 2.5) / 2));
+  left: calc(51.5vw - (var(--fridge-w) / 2));  
+
+}
+
+#tile {
+  z-index: 0;
+  width: 100vw;
+  height: auto;
+  display: block;
+  top: 23%;
+}
+
+.txt {
+  font-size: 2rem;
+  bottom: -5%;
+  z-index: 2;
+  position: absolute;
+  text-align: center;
+  width: 100%;
+  transition: 0.3s;
+}
+/* -------------------------
+end page1
+------------------ */
+
+
+
+.pic {
+  background-size: cover;
+  position: absolute;
+}
+
+.img-container {
+  height: min-content;
+}
+
+.centered {
+  height: 100%;
+  font-size: 5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.stop-scrolling {
+  height: 100%;
+  overflow: hidden;
+}
+
+/* ทำรูปของต้นน้ำ */
+
+
+.image-container {
+  position: relative;
+  width: 300px;
+  height: 100%;
+  cursor: pointer;
+}
+
+
+
+.pic_postit{
+    width: 50px;
+}
+.pic_postit:hover {
+  cursor: pointer;
+  transform: scale(1.2);
+}
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    padding-top: 50px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.9);
+}
+
+
+
+
+/* Style the caption text */
+.caption {
+    margin: 10px 0;
+    color: #ccc;
+    font-size: 18px;
+    text-align: center;
+}
+
+/* Media Query section */
+@media only screen and (max-width: 1280px) {
+  #first-fridge{
+    /* height: 1250px; */
+    --fridge-w: 200px;
+  }
+}
+
+@media only screen and (max-width: 1280px) {
+  #first-fridge{
+    /* height: 1250px; */
+    --fridge-w: 200px;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  #first-fridge{
+    /* height: 750px; */
+    --fridge-w: 150px;
+  }
+}
+

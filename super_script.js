@@ -9,48 +9,99 @@
     }, 3000); // 3 วินาที
 
 
-var girl_index = 2;
+var girl_index = 0;
 var shelf_index = 2;
+function walk_cycle(frame){
+    walkingInterval = setInterval(function() {
+      document.getElementById('character').setAttribute('src', 'img file/supermarket/Chuppy Girl-0'+frame+'.png')
+    
+    setTimeout(function() {
+      document.getElementById('character').setAttribute('src', 'img file/supermarket/Chuppy Girl-0'+frame+' (Walk).png')
+
+    }, 500);
+
+  }, 1000);
+
+
+}
 
 function next(){
-  if(girl_index <=11){
-    document.getElementById('character').setAttribute('src', 'img file/supermarket/Girl_'+girl_index+'.png')
   girl_index++;
-  let btn = document.getElementById("btn");
-  btn.className = "disabled";
+  if(girl_index <= 7){
+    walk_cycle(girl_index)
+    let btn = document.getElementById("btn");
+    // let btn = document.getElementById("shelf");
+    btn.className = "disabled";
+    
     setTimeout(function() {
       // delay ใส่ตรงนี้
-      
+
+
+
       
       // From: https://jsfiddle.net/28Qfx/
-      let d = document.getElementById("shelf");
-      d.className = "moveout";
+      let shelf = document.getElementById("shelf");
+      shelf.className = "moveShelfOut";
+
+      let floor = document.getElementById("floor");
+      floor.className = "moveShelfOut";
+
+      let backshelf = document.getElementById("backshelf");
+      backshelf.className = "moveBackshelfOut";
+
 
 
       setTimeout(function() {
         // delay ใส่ตรงนี้
-        if(shelf_index<=10){
- document.getElementById('shelfpic').setAttribute('src', 'img file/supermarket/Shelf-'+shelf_index+'.png')
-        shelf_index++;
-        let d = document.getElementById("shelf");
-        d.className = "movein";
+        if(shelf_index <= 7){
+          document.getElementById('shelfpic').setAttribute('src', 'img file/supermarket/Super Shelf-'+shelf_index+'.png')
+          shelf_index++;
+          
+          let shelf = document.getElementById("shelf");
+          shelf.className = "moveShelfIn";
+
+          let floor = document.getElementById("floor");
+          floor.className = "moveShelfIn";
+          
+          let backshelf = document.getElementById("backshelf");
+          backshelf.className = "moveBackshelfIn";
+          
         }
-        else{
+          
+        else if(shelf_index == 8){
+          // ถึง Counter จ่างยเงิน
+          document.getElementById('shelfpic').setAttribute('src', 'img file/supermarket/Cashier Girl.png')
+          shelf_index++;
+          
+          let shelf = document.getElementById("shelf");
+          shelf.style.width = "90%";
+          shelf.style.left = "30%";
+          shelf.className = "moveShelfIn";
+
+          let floor = document.getElementById("floor");
+          floor.className = "moveShelfIn";
+
+          let backshelf = document.getElementById("backshelf");
+          backshelf.className = "moveBackshelfIn";
+        }
+        else if(shelf_index > 8){
           window.location = "bill.html";
         }
+
         setTimeout(function() {
           btn.className = "";
+          clearInterval(walkingInterval);
+          setTimeout(function() {
+          document.getElementById('character').setAttribute('src', 'img file/supermarket/Chuppy Girl-0'+girl_index+'.png')
+          }, 500);
         }, 2000);
-      }, 2500);
-      
-    }, 1000);
+        
+      }, 2000);
 
+    }, 1500);
 
-    
-    
   }
-     
   else{
-    
+    window.location = "bill.html";
   }
 }

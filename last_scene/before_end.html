@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quote</title>
+  <style>
+  body{
+    margin: 0;
+  }
+
+    #page5 {
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: hsl(33, 95%, 92%);
+      height: 100vh; /* Set the height to 100% of the viewport height */
+      overflow: hidden; /* Optional: to prevent scrollbars if content overflows */
+
+    }
+
+    #page5_Text {
+
+      font-size: 3rem;
+      cursor: pointer;
+      transition: opacity 0.5s ease-in-out;
+      color: #704123;
+      text-align: center;
+      /* padding: 10px; */
+    }
+
+  
+  </style>
+</head>
+<body>
+  <section id="page5">
+    <div id="page5_Text" onclick="changeText2()">
+      "เหลือดีกว่าขาด"
+      <p style="font-size: 0.3em;">กดเพื่อไปต่อ</p>
+    </div>
+  </section>
+  <script>
+    function changeText2(){
+       window.location = "../ending/ending.html";
+    }
+  </script>
+</body>
+</html>

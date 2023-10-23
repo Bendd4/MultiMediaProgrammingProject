@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -32,7 +33,8 @@
         <!-- <div class="shelf-container"></div>       -->
         <div>
           <audio id="fridge-open-audio" src="Sound Effect/1 Fridge Scene/Fridge-Open.mp3"></audio>
-          <img id="fridge" src="img file/page_1/New Refrigerator-01.png" class="pic unlockButton fridge">
+          <audio id="digitonza55" src="Sound Effect/3 Store Scene/Store-Door.mp3"></audio>
+          <img id="fridge" src="img file/page_1/Refrigerator (in).png" class="pic unlockButton fridge">
 
           
           <div class="bounce unlockButton">
@@ -44,20 +46,9 @@
           
         </div>
 
-        <div id="image-modal" class="modal">
-          <span class="close" onclick="closeModal()">&times;</span>
-          <img class="modal-content" id="img01">
-        </div>
+        
 
-        <div class="image-container" style=" left:25%; top:30%; rotate:-10deg;">
-          <img class="pic_postit" style="width: 70px;" src="img file/post/Check List.png" alt="รูปภาพ" onclick="openModal(this)">
-        </div>
-
-        <div class="image-container">
-          <img class="pic_postit" style="width: 70px;" src="img file/post/Check List.png" alt="รูปภาพ"
-            onclick="openModal(this)">
-        </div>
-
+        
       </section>
 
     </section>
@@ -71,15 +62,16 @@
       </div>
       <audio id="trash-bag-audio" src="Sound Effect\2 Trash Scene/Trash Bag.mp3"></audio>
       <div id="Binbag" class="Binbag" onclick="up()">
-        <img src="img file/page_3/Bin Bag (top).png" id="unlock_bin" style="width:100%;">
+        <div id="page2_Hint">
+          ⬆ เก็บขยะ ⬆
+        </div>
+        <img src="img file/page_3/Bin Bag (top).png" id="unlock_bin" style="width:100%;margin-bottom: -1%;">
         <div id="page2_Text" onclick="changeText1()">
           รู้ไหมว่าขยะพวกนี้มาจากไหน ?
           <p style="font-size: 0.3em;">กดเพื่อไปต่อ</p>
         </div>
         <img src="img file/page_3/Bin_BG.jpg" style="width:100%; height: 210vh; overflow-y: hidden;">
       </div>
-
-
     </section>
 
 

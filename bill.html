@@ -5,12 +5,15 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Bill</title>
+  <title>Left Over</title>
+  <link rel="icon" type="image/x-icon" href="img file/logo/favicon-icon.png">
 </head>
 <style>
   body {
     scroll-behavior: smooth;
-    background: linear-gradient(180deg, rgba(255, 255, 255, 1) 0%, rgba(195, 148, 104, 1) 80%, rgba(174, 123, 75, 1) 100%);
+    /* background: linear-gradient(180deg, rgba(255, 255, 255, 1) 0%, rgba(195, 148, 104, 1) 80%, rgba(174, 123, 75, 1) 100%); */
+    background: rgb(254,254,253);
+    background: linear-gradient(180deg, rgba(254,254,253,1) 0%, rgba(218,190,163,1) 33%, rgba(150,106,65,1) 66%, rgba(51,35,20,1) 100%);
     font-family: 'IBM Plex Sans Thai Looped', sans-serif;
     -webkit-user-select: none;
     -moz-user-select: none;
@@ -26,6 +29,7 @@
 </style>
 
 <body>
+  <audio id="Receipt-audio" src="Sound Effect/4 Receipt/Receipt.mp3"></audio>
   <div class='container'>
     <img src='img file/bill/Receipt-01.png' style='width:80%; '>
     <img src='img file/bill/Receipt-02.png' style='width:80%; margin-top:-3%;'>
@@ -36,5 +40,9 @@
     <img src='img file/bill/Receipt-02.png' style='width:80%; margin-top:-3%;'>
     <img src='img file/bill/Receipt-03.png' style='width:80%; margin-top:-3%; cursor: pointer;' onclick='window.location = "last_scene/last_scene.html";''>
     </div>
+  <script>
+    const audio = document.getElementById('Receipt-audio');
+    audio.play();
+  </script>
   </body>
   </html>

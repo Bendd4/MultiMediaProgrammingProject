@@ -28,7 +28,8 @@ function changeText1() {
       pg2_txt_Index++;
     }
     else {
-      pg2_textElement.innerHTML =  '￬ ￬'
+      // arrow copy anad paste: ⬆ ⬇ ⬅ ➡
+      pg2_textElement.innerHTML =  '⬇ ⬇'
       pg2_textElement.onclick = null;
       // pg2_txt_Index = 0;
     }
@@ -50,9 +51,10 @@ function changeText2() {
     else {
       document.getElementById('page5_Text').style.cursor = 'default';
       pg5_textElement.innerHTML = '<div style="font-size: 3rem; text-align: center; padding: 5%">ลองมาพิสูจน์กัน</div>'+
-              '<div style="font-size: 1rem;text-align: center;">กดเข้าร้านค้าเพื่อไปต่อ</div>'+
-        '<a href="supermarket.html" style="display: flex;align-items: center;justify-content: center;padding: 1%"> <img src="img file/page_5/Supermarket.png" '+
-        'style="width:70%; margin:auto; align-items: center;"> </a>';
+        '<div style="font-size: 1rem;text-align: center;">กดเข้าร้านค้าเพื่อไปต่อ</div>'+
+        '<audio id="digitonza55" src="Sound Effect/3 Store Scene/Store-Door.mp3"></audio>'+
+      '<a id="pong" onclick="doorbell()" style="display: flex;cursor: pointer;align-items: center;justify-content: center;padding: 1%"> <img src="img file/page_5/Supermarket.png" onclick="pongaum()"'+
+      'style="width:70%; margin:auto; align-items: center;"> </a>';
         
         pg5_textElement.onclick = null;
         initiateSmoothScroll();
@@ -61,6 +63,19 @@ function changeText2() {
   }, 500);
   
   
+}
+
+function doorbell() {
+  setTimeout(function() {
+      window.location.href = 'supermarket.html';
+  }, 4000);
+}
+
+function pongaum() {
+  const Store = document.getElementById('pong')
+  const audio = document.getElementById('digitonza55');
+  Store.addEventListener('click', () => {
+  audio.play();})
 }
 
 function initiateSmoothScroll() {
@@ -185,16 +200,3 @@ function bounceAndDisappear() {
 // });
 
 
-    // Open the Modal
-function openModal(imgElement) {
-    var modal = document.getElementById("image-modal");
-    var modalImg = document.getElementById("img01");
-    modal.style.display = "block";
-    modalImg.src = imgElement.src;
-}
-
-// Close the Modal
-function closeModal() {
-    var modal = document.getElementById("image-modal");
-    modal.style.display = "none";
-}

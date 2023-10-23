@@ -7,46 +7,52 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="super_style.css">
   <script src="super_script.js"></script>
-  <title>Supermarket</title>
-   <link rel="preconnect" href="https://fonts.googleapis.com">
+  <title>Left Over</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai+Looped&family=Prompt&display=swap" rel="stylesheet">
-  <link rel="icon" type="image/x-icon" href="img file/favicon-icon.png">
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai+Looped&family=Prompt&display=swap"
+    rel="stylesheet">
+  <link rel="icon" type="image/x-icon" href="img file/logo/favicon-icon.png">
 </head>
 
 <body>
+<div id="body-wrapper">
   <div id='main'>
     <div class="loader-container">
       <div class="loader">
-          <span class="loader__element"><img src="img file/download/Download_1.png" class="pic_load"></span>
-          <span class="loader__element"><img src="img file/download/Download_2.png" class="pic_load"></span>
-          <span class="loader__element"><img src="img file/download/Download_3.png" class="pic_load"></span>
-          <span class="loader__element"><img src="img file/download/Download_4.png" class="pic_load"></span>
-          <span class="loader__element"><img src="img file/download/Download_5.png" class="pic_load"></span>
-          <span class="loader__element"><img src="img file/download/Download_6.png" class="pic_load"></span>
+        <audio id="food-drop-audio" src="Sound Effect/3 Store Scene/Food Drop.mp3"></audio>
+        <span class="loader__element"><img src="img file/download/Download_1.png" class="pic_load"></span>
+        <span class="loader__element"><img src="img file/download/Download_2.png" class="pic_load"></span>
+        <span class="loader__element"><img src="img file/download/Download_3.png" class="pic_load"></span>
+        <span class="loader__element"><img src="img file/download/Download_4.png" class="pic_load"></span>
+        <span class="loader__element"><img src="img file/download/Download_5.png" class="pic_load"></span>
+        <span class="loader__element"><img src="img file/download/Download_6.png" class="pic_load"></span>
+
       </div>
     </div>
+    <audio id="cashier-audio" src="Sound Effect/3 Store Scene/Cashier.mp3"></audio>
+    <audio id="background-audio" src="Sound Effect/3 Store Scene/Full Cute Background Music.mp3"></audio>
+    <div id="center-el">
+      <!-- <img src='img file/supermarket/BG_Fool.png' id='floor'> -->
+      <div id='floor'></div>
 
-  <div id="center-el">
-    <!-- <img src='img file/supermarket/BG_Fool.png' id='floor'> -->
-    <div id='floor'></div>
+      <!-- <img src='img file/supermarket/BG_Shelf.png' id='backshelf'> -->
+      <div id='backshelf'></div>
 
-    <!-- <img src='img file/supermarket/BG_Shelf.png' id='backshelf'> -->
-    <div id='backshelf'></div>
-    
-    <img src='img file/supermarket/Chuppy Girl-00.png' class='character' id='character'>
-    <div class="" id="shelf">
-      <img src='img file/supermarket/Super Shelf-1.png' id="shelfpic">
+      <img src='img file/supermarket/Chuppy Girl-00.png' class='character' id='character'>
+      <div class="" id="shelf">
+        <img src='img file/supermarket/Super Shelf-1.png' id="shelfpic">
+      </div>
+
+      <div id="btn" onclick='next()'>
+        <div class="hotpoint" id="hotpoint1"></div>
+      </div>
     </div>
-
-    <div id="btn" onclick='next()'>
-      <div class="hotpoint" id="hotpoint1"></div>
-    </div>
-  </div>
     <!-- <div id="btn">
       <img src="img file/supermarket/shopping-cart.png"  onclick='next()' class="cartbutton">
     </div> -->
   </div>
+</div>
 </body>
 
 </html>

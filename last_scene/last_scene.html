@@ -3,28 +3,43 @@
 
 <head>
   <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <!-- <meta http-equiv="X-UA-Compatible" content="IE=edge"> -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="last.css">
   <script src="last.js"></script>
   <title>Left Over</title>
   <link rel="icon" type="image/x-icon" href="img_last/favicon-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai+Looped&family=Prompt&display=swap"
+    rel="stylesheet">
 </head>
 
 <body>
+  <audio id="LastScenebgsound" autoplay>
+    <source src="../Sound Effect/5 Last Scene/Feel Better Background Music.mp3" type="audio/mpeg">
+  </audio>
   <section id="page1">
-      <!-- ส่วนโลโก้ขยับ -->
-
-
+    <audio id="pop" src="Sound Effect/5 Last Scene/Pop.mp3"></audio>
       <!-- ส่วนตู้เย็นและชั้น -->
       <section id="first-fridge" onclick="next()">
         <div class="background" id="background"></div>
-        <div class="shelf-background" id='shelf-background'></div>
-        <!-- <div class="shelf-container"></div>       -->
-        <div>
-          <img src="img_last/Refrigerator (organize)-1.png" class="pic unlockButton fridge bounce" id="unlock_fridge">
-        </div>
-      
+        <div class="shelf-background" id='shelf-background0'></div>
+        <div class="shelf-background" id='shelf-background1'></div>
+        <div class="shelf-background" id='shelf-background2'></div>
+        <div class="shelf-background" id='shelf-background3'></div>
+        <div class="shelf-background" id='shelf-background4'></div>
+        <div class="shelf-background" id='shelf-background5'></div>
+        <div class="shelf-background" id='shelf-background6'></div>
+        <!-- <div class="shelf-container"></div> -->
+        
+        <!-- ตู้เย็น -->
+          <img src="img_last/Refrigerator (planner out).png" class="pic fridge" id="fridge0">
+          <img src="img_last/Refrigerator (organize)-1.png" class="pic fridge" id="fridge1">
+          <img src="img_last/Refrigerator (organize in)-2.png" class="pic fridge" id="fridge2">
+          <img src="img_last/Refrigerator (organize in)-3.png" class="pic fridge" id="fridge3">
+          <img src="img_last/Refrigerator (organize in)-4.png" class="pic fridge" id="fridge4">
+
         <!-- <div id="image-modal" class="modal">
           <span class="close" onclick="closeModal()">&times;</span>
           <img class="modal-content" id="img01">
@@ -33,12 +48,52 @@
         <div class="image-container">
           <img class="pic_postit" style="width: 50px;"
             
-            alt="รูปภาพ" onclick="openModal(this)"> -->
+            alt="รูปภาพ" onclick="openModal(this)"> 
+        </div> -->
+        <div class='txt' id='txt-container'>
+          <p id='txt'>ซื้อของเยอะ ของล้นตู้</p>
         </div>
-     
       </section>
-    <p class='txt' id='txt'>ซื้อของเยอะ ของล้นตู้</p>
-   
+    
+    <!-- โพสอิท -->
+    <div class="desktop">
+      
+    <div id="image-modal" class="modal">
+      <span class="close" onclick="closeModal()">&times;</span>
+      <img class="modal-content" id="img01">
+    </div>
+
+    <div class="image-container" style="top:15%; left:75%;">
+      <img class="pic_postit" style="width: 70px;" src="../img file/post/Check List.png" onclick="openModal(this)">
+    </div>
+
+    <div class="image-container" style="top:15%; left:15%;">
+      <img class="pic_postit" style="width: 70px;" src="../img file/post/Note-03.png" onclick="openModal(this)">
+    </div>
+
+    <div class="image-container" style="top:45%; left:30%;  rotate:-10deg;">
+      <img class="pic_postit" style="width: 70px;" src="../img file/post/Note-04.png" onclick="openModal(this)">
+    </div>
+
+    <div class="image-container" style="top:50%; left:80%;  rotate:10deg;">
+      <img class="pic_postit" style="width: 70px;" src="../img file/post/Note-05.png" onclick="openModal(this)">
+    </div>
+
+      <div class="image-container" style="top:70%; left:10%;  rotate:-10deg;">
+        <img class="pic_postit" style="width: 70px;" src="../img file/post/Note-06.png" onclick="openModal(this)">
+      </div>
+
+      <div class="image-container" style="top:30%; left:65%;  rotate:10deg;">
+        <img class="pic_postit" style="width: 100px;" src="../img file/post/Planner-01.png" onclick="openModal(this)">
+      </div>
+
+    </div>
+    <!-- <p class='txt' id='txt'>ซื้อของเยอะ ของล้นตู้</p> -->
+
+    
+
+
+    
     </section>
 </body>
 

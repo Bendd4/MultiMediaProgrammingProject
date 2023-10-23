@@ -68,7 +68,7 @@ page1
   /* -webkit-box-shadow: 0px -50vw 90px 100vw hsla(33, 95%, 92%, 100);
   -moz-box-shadow: 0px -50vw 90px 10vw hsla(33, 95%, 92%, 100); */
 
-  --fridge-w: 361px;
+  --fridge-w: 388px;
   /* --shelf-w: calc(4012px * 0.35); */
   /* --shelf-h: calc(2262px * 0.35); */
   --shelf-w: calc(var(--fridge-w) * 5.32);
@@ -83,44 +83,81 @@ page1
   width: calc(var(--shelf-w) * 1.5);
   height: calc(var(--shelf-h) * 0.8);
   position: absolute;
-  left: calc(50vw - ((var(--shelf-w) * 1.5) / 2));
-  /* bottom: 5%; */
+  left: calc(48vw - ((var(--shelf-w) * 1.5) / 2));
+  bottom: 0%;
   background-image: url('img_last/BG.png');
   background-position: center;
   background-repeat: no-repeat;
   background-size: var(--shelf-w) var(--shelf-h);
   transition:0.3s;
 }
+
 .shelf-background{
   width: calc(var(--shelf-w) * 1.5);
   height: calc(var(--shelf-h) * 0.8);
   position: absolute;
-  left: calc(50vw - ((var(--shelf-w) * 1.5) / 2));
-  /* bottom: 5%; */
-  background-image: url('img_last/Organize-01.png');
+  left: calc(48vw - ((var(--shelf-w) * 1.5) / 2));
+  bottom: 0%;
+  /* background-image: url('img_last/Organize-01.png'); */
   background-position: center;
   background-repeat: no-repeat;
   background-size: var(--shelf-w) var(--shelf-h);
-  transition:0.3s;
+  transition: all 0.5s;
 }
 
-/* .shelf-container{
-  width: calc(var(--shelf-w) * 1.5);
-  height: calc(var(--shelf-h) * 1);
-  position: absolute;
-  left: calc(50vw - ((var(--shelf-w) * 1.5) / 2));
-  background-image: url('img file/page_1/Kitchen.png');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: var(--shelf-w) var(--shelf-h); */
+#shelf-background0{
+  background-image: url('img_last/Organize-00.png');
+  z-index: 11;
+}
 
-  /* background-size: cover; */
+#shelf-background1{
+  background-image: url('img_last/Organize-01.png');
+  z-index: 6;
+}
 
+#shelf-background2{
+  background-image: url('img_last/Organize-02.png');
+  z-index: 5;
+}
 
-  /* max-width: 1920px; */
-  /* max-height: auto; */
+#shelf-background3{
+  background-image: url('img_last/Organize-03.png');
+  z-index: 4;
+}
 
-  /* overflow: hidden; */
+#shelf-background4{
+  background-image: url('img_last/Organize-04.png');
+  z-index: 3;
+}
+
+#shelf-background5{
+  background-image: url('img_last/Organize-05.png');
+  z-index: 2;
+}
+
+#shelf-background6{
+  background-image: url('img_last/Organize-06.png');
+  z-index: 1;
+}
+
+#fridge0{
+  z-index: 12;
+}
+
+#fridge1{
+  z-index: 10;
+}
+
+#fridge2{
+  z-index: 9;
+}
+
+#fridge3{
+  z-index: 8;
+}
+
+#fridge4{
+  z-index: 7;
 }
 
 .shelf-container img{
@@ -128,28 +165,15 @@ page1
   height: auto;
 }
 
-#shelf{
-  /* --imgw: 4012;
-  --imgh: 2262;
-  width: 1920px;
-  height: 50%; */
-  /* min-height: calc(100vw * var(--imgh) / var(--imgw)); */
-  /* height: 90%; */
-  /* display: block; */
-  /* background-attachment: fixed; */
-  /* left: calc(48vw - (90% / 2)); */
-  /* top: 13.9%; */
-}
-
 .fridge {
   /* --fridgeW: calc(var(--shelf-w) * 0.2); */
   width: var(--fridge-w);
   height: auto;
   /* text-align: center; */
-  /* bottom: 5%; */
-  top: calc(11.6vh - ((var(--fridge-w) / 2.5) / 2));
-  left: calc(51.5vw - (var(--fridge-w) / 2));  
-
+  bottom: 0%;
+  /* top: calc(35.8vh - (var(--shelf-h)/2)/2); */
+  left: calc(50vw - (var(--fridge-w) / 2));  
+  transition: all 0.5s;
 }
 
 #tile {
@@ -158,16 +182,32 @@ page1
   height: auto;
   display: block;
   top: 23%;
+  transition: 0.3s;
 }
 
 .txt {
-  font-size: 2rem;
-  bottom: -5%;
-  z-index: 2;
+  background-color: hsl(33, 95%, 92%);
+  bottom: 0%;
   position: absolute;
   text-align: center;
   width: 100%;
-  transition: 0.3s;
+  transition: all 0.5s;
+}
+
+#txt{
+  font-size: 3rem;
+  color: #704123;
+  transition: all 0.5s;
+  /* margin: 8px; */
+}
+
+#txt-container{
+  box-shadow: 0px 0px 11px 6px hsl(33, 95%, 92%);
+  -webkit-box-shadow: 0px 0px 11px 6px hsl(33, 95%, 92%);
+  -moz-box-shadow: 0px 0px 11px 6px hsl(33, 95%, 92%);
+  z-index: 20;
+  opacity: 0%;
+  transition: all 0.5s;
 }
 /* -------------------------
 end page1
@@ -207,8 +247,6 @@ end page1
   cursor: pointer;
 }
 
-
-
 .pic_postit{
     width: 50px;
 }
@@ -229,9 +267,6 @@ end page1
     background-color: rgba(0,0,0,0.9);
 }
 
-
-
-
 /* Style the caption text */
 .caption {
     margin: 10px 0;
@@ -240,25 +275,147 @@ end page1
     text-align: center;
 }
 
-/* Media Query section */
-@media only screen and (max-width: 1280px) {
-  #first-fridge{
-    /* height: 1250px; */
-    --fridge-w: 200px;
-  }
+.image-container {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  cursor: pointer;
 }
 
+
+.pic_postit{
+    width: 50px;
+}
+.pic_postit:hover {
+  cursor: pointer;
+  transform: scale(1.2);
+}
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 10000;
+    padding-top: 50px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.9);
+}
+
+/* Modal Content (image) */
+.modal-content {
+    margin: auto;
+    display: block;
+    width: 30%;
+    max-width: 800px;
+}
+
+/* Close button */
+.close {
+    position: absolute;
+    top: -20px;
+    right: 25px;
+    color: white;
+    font-size: 75px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover {
+    /* color: #999; */
+}
+
+/* Container for the image and caption */
+.image-container {
+    text-align: center;
+    margin: 24px 0;
+    position: absolute;
+    z-index:100
+}
+
+.image-container img {
+    /* border: 3px solid #ddd; */
+    border-radius: 4px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.image-container img:hover {
+    /* border: 3px solid #777; */
+}
+
+/* Style the caption text */
+.caption {
+    margin: 10px 0;
+    /* color: #ccc; */
+    font-size: 18px;
+    text-align: center;
+}
+
+.desktop {
+    display: none;
+}
+
+.mobile {
+    display: block;
+}
+
+/* Media Query section */
+/* สำหรับ media query ห้ามเขียนอะไรใต้นี้นอกจาก query */
 @media only screen and (max-width: 1280px) {
   #first-fridge{
-    /* height: 1250px; */
     --fridge-w: 200px;
+  }
+  .fridge{
+    /* top: calc(9.5vh - (var(--fridge-w)/2)/2);calc(9.5vh - (var(--fridge-w)/)/2) */
+    bottom: 25%;
+    left: calc(49.7vw - (var(--fridge-w) / 2));
+  }
+  .shelf-background{
+    bottom: 25%;
+  }
+  .background{
+    bottom: 25%;
+  }
+  .txt {
+    bottom: 10%;
+  }
+  #txt{
+    font-size: 2rem;
   }
 }
 
 @media only screen and (max-width: 500px) {
   #first-fridge{
     /* height: 750px; */
-    --fridge-w: 150px;
+    --fridge-w: 120px;
   }
+  .fridge{
+    bottom: 28%;
+    /* top: calc(7vh - (var(--fridge-w)/2)/2); */
+    left: calc(52vw - (var(--fridge-w) / 2));
+  }
+  .shelf-background{
+    bottom: 28%;
+  }
+  .background{
+    bottom: 28%;
+  }
+  .txt {
+    bottom: 15%;
+  }
+  /* #txt{
+    font-size: 2rem;
+  } */
 }
 
+@media screen and (min-width: 768px) {
+    .desktop {
+        display: block;
+    }
+
+    .mobile {
+        display: none;
+    }
+}

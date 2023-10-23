@@ -5,8 +5,11 @@
 
       // ซ่อนหน้าโหลดและแสดงเนื้อหาหลักหลังจากโหลดเสร็จ
       loaderContainer.style.display = 'none';
+      const audio = document.getElementById('background-audio');
+      audio.play();
       // content.style.display = 'block'; บรรทัดนี้พังนะ
     }, 3000); // 3 วินาที
+
 
 
 var girl_index = 0;
@@ -28,6 +31,9 @@ function walk_cycle(frame){
 function next(){
   girl_index++;
   if(girl_index <= 7){
+    // ใส่ให้เล่นเสียงตรงนี้
+    const audio = document.getElementById("food-drop-audio");
+    audio.play()
     walk_cycle(girl_index)
     let btn = document.getElementById("btn");
     // let btn = document.getElementById("shelf");
@@ -72,7 +78,6 @@ function next(){
           // ถึง Counter จ่างยเงิน
           document.getElementById('shelfpic').setAttribute('src', 'img file/supermarket/Cashier Girl.png')
           shelf_index++;
-          
           let shelf = document.getElementById("shelf");
           shelf.style.width = "90%";
           shelf.style.left = "30%";
@@ -85,9 +90,12 @@ function next(){
           backshelf.className = "moveBackshelfIn";
         }
         else if(shelf_index > 8){
-          window.location = "bill.html";
+          const audio = document.getElementById('cashier-audio');
+          audio.play();
+          setTimeout(function() {
+            window.location = "bill.html";
+          }, 2000);
         }
-
         setTimeout(function() {
           btn.className = "";
           clearInterval(walkingInterval);
@@ -102,6 +110,21 @@ function next(){
 
   }
   else{
-    window.location = "bill.html";
+    const audio = document.getElementById('cashier-audio');
+    audio.play();
+    setTimeout(function() {
+      window.location = "bill.html";
+    }, 2000);
   }
 }
+
+// function pongaum() {
+//   const Store = document.getElementById('pong')
+//   const audio = document.getElementById('cashier-audio');
+//   Store.addEventListener('click', () => {
+//   audio.play();})
+// }
+
+// const audio = document.getElementById('cashier-audio');
+// audio.play();
+// <audio id="cashier-audio" src="Sound Effect/3 Store Scene/Cashier.mp3"></audio>

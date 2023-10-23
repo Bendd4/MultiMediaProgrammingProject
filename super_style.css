@@ -1,5 +1,10 @@
 html {
   font-family: 'IBM Plex Sans Thai Looped', sans-serif;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  overflow: hidden;
 }
 
 body {
@@ -11,6 +16,11 @@ body {
   /* display: flex;
   justify-content: center; */
   /* align-items: center; */
+}
+
+#body-wrapper{
+  /* ป้องกัน scroll ด้านข้างของโทรศัพท์ */
+  overflow: hidden;
 }
 
 #main {
@@ -89,6 +99,10 @@ body {
 
 .loader__element:nth-child(6) {
   animation: preloader .7s ease-in-out alternate .5s infinite;
+}
+
+.loader__element:nth-child(7) {
+  animation: preloader .7s ease-in-out alternate .6s infinite;
 }
 
 @keyframes preloader {

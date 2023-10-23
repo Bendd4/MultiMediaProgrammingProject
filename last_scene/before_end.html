@@ -4,10 +4,20 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Quote</title>
+  <title>Left Over</title>
+  <link rel="icon" type="image/x-icon" href="../img file/logo/favicon-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai+Looped&family=Prompt&display=swap"
+    rel="stylesheet">
   <style>
   body{
+    font-family: 'IBM Plex Sans Thai Looped', sans-serif;
     margin: 0;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
   }
 
     #page5 {
@@ -16,8 +26,9 @@
       align-items: center;
       justify-content: center;
       background-color: hsl(33, 95%, 92%);
-      height: 100vh; /* Set the height to 100% of the viewport height */
-      overflow: hidden; /* Optional: to prevent scrollbars if content overflows */
+      height: 100vh; 
+      overflow: hidden; 
+
 
     }
 
@@ -36,14 +47,33 @@
 </head>
 <body>
   <section id="page5">
-    <div id="page5_Text" onclick="changeText2()">
-      "เหลือดีกว่าขาด"
+    <div id="page5_Text" onclick="changeText()">
+      แค่เริ่มจาก ‘ตู้เย็น’ ในบ้านคุณเอง
+
       <p style="font-size: 0.3em;">กดเพื่อไปต่อ</p>
     </div>
   </section>
   <script>
-    function changeText2(){
-       window.location = "../ending/ending.html";
+
+    var intro = ['แค่เริ่มจาก ‘ตู้เย็น’ ในบ้านคุณเอง', 'คุณก็สามารถช่วย ‘ลดขยะอาหาร’ ได้แล้ว'];
+
+    introIndex = 0;
+    function changeText() {
+      let txt = document.getElementById('page5_Text');
+      txt.style.opacity = '0';
+      introIndex++;
+      if(introIndex > 1){
+        window.location = "../ending/ending.html";
+      }
+      else{
+        setTimeout(function() {
+          txt.textContent = intro[introIndex];
+          txt.style.opacity = '1';
+
+        }, 500);
+      }
+     
+     
     }
   </script>
 </body>

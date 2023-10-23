@@ -100,7 +100,7 @@ page1
   /* -webkit-box-shadow: 0px -50vw 90px 100vw hsla(33, 95%, 92%, 100);
   -moz-box-shadow: 0px -50vw 90px 10vw hsla(33, 95%, 92%, 100); */
   
-  --fridge-w: 372px;
+  --fridge-w: 389px;
   /* --shelf-w: calc(4012px * 0.35); */
   /* --shelf-h: calc(2262px * 0.35); */
   --shelf-w: calc(var(--fridge-w) * 5.32);
@@ -141,19 +141,6 @@ page1
 .shelf-container img{
   width: 100%;
   height: auto;
-}
-
-#shelf{
-  /* --imgw: 4012;
-  --imgh: 2262;
-  width: 1920px;
-  height: 50%; */
-  /* min-height: calc(100vw * var(--imgh) / var(--imgw)); */
-  /* height: 90%; */
-  /* display: block; */
-  /* background-attachment: fixed; */
-  /* left: calc(48vw - (90% / 2)); */
-  /* top: 13.9%; */
 }
 
 .fridge {
@@ -226,6 +213,9 @@ page1
   opacity: 100%;
   z-index: 1;
 }
+
+/* post it sty */
+
 /* -------------------------
 end page1
 ------------------ */
@@ -236,13 +226,15 @@ page2
 ------------------ */
 
 #page2 {
-  height: 260vh;
+  height: fit-content;
   max-height: 200vw;
   min-height: 150vw;
   /* background-color: #b1b5f7; */
   /* display: grid;
   grid-template-columns: repeat(3, 1fr); */
-  background: linear-gradient(white, black);
+  /* background: linear-gradient(white, black); */
+  background: rgb(254,237,215);
+  background: linear-gradient(180deg, rgba(254,237,215,1) 0%, rgba(0,0,0,1) 53%);
   /* background-color: black; */
   justify-content: center;
 }
@@ -262,6 +254,19 @@ page2
   min-height: 100vw;
   margin-top: -20%;
   transition: 1s;
+}
+
+#page2_Hint{
+  position: absolute;
+  width: 100vw;
+  /* top: 0%; */
+  justify-content: center;
+  text-align: center;
+  margin-top: 12%;
+  font-size: 3rem;
+  cursor: pointer;
+  transition: opacity 0.5s ease-in-out;
+  color: white;
 }
 
 #page2_Text {
@@ -289,11 +294,11 @@ page3
 ------------------ */
 
 #page3 {
-  height: 150vh;
+  height: 80vh;
 
   justify-content: center;
   color: white;
-  background: linear-gradient(hsl(240, 7%, 3%) 50%, hsl(33, 95%, 92%));
+  background: linear-gradient(black, hsl(33, 95%, 92%));
   background-size: cover;
 }
 
@@ -301,11 +306,6 @@ page3
 /* -------------------------
 end page3
 ------------------ */
-
-
-
-
-
 
 #pagedownload {
   height: 100vh;
@@ -319,22 +319,13 @@ end page3
   position: absolute;
 }
 
-
-
-
-
-
 .img-container {
   height: min-content;
 }
 
-
-
 #logo_black {
   width: 100%;
 }
-
-
 
 .centered {
   height: 100%;
@@ -409,8 +400,61 @@ end page3
 
 }
 
-@media only screen and (max-width: 720px) {
 
+/* ------------------
+ end page 4 
+----------------- */
+
+
+/* ------------------
+page 5 
+----------------- */
+
+#page5 {
+  height: 110vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: hsl(33, 95%, 92%);
+  overflow-y: hidden;
+}
+
+#page5_Text {
+  font-size: 3rem;
+  cursor: pointer;
+  transition: opacity 0.5s ease-in-out;
+  color: #704123;
+  text-align: center;
+  /* padding: 10px; */
+}
+
+/* ------------------
+ end page 5
+----------------- */
+
+
+
+/* Media Query section */
+
+.stop-scrolling {
+  height: 100%;
+  overflow: hidden;
+}
+
+/* ทำรูปของต้นน้ำ */
+
+
+.desktop {
+    display: none;
+  height: 100%;
+}
+
+.mobile {
+    display: block;
+}
+
+/* สำหรับ media query ห้ามเขียนอะไรใต้นี้นอกจาก query */
+@media only screen and (max-width: 720px) {
   #cartinfo {
     width: 400px;
     /* opacity: 0;
@@ -457,9 +501,13 @@ end page3
 }
 
 @media only screen and (max-width: 530px) {
+  #first-fridge{
+    height: 750px;
+    --fridge-w: 150px;
+  }
+  
   #cartinfo {
     width: 300px;
-
   }
 
   .textcart {
@@ -477,7 +525,6 @@ end page3
     position: relative;
 
   }
-
 
   .page4_bottom_txt {
     font-size: 0.6rem;
@@ -499,161 +546,12 @@ end page3
   }
 }
 
-/* ------------------
- end page 4 
------------------ */
-
-
-/* ------------------
-page 5 
------------------ */
-
-#page5 {
-  height: 110%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: hsl(33, 95%, 92%);
-  overflow-y: hidden;
-}
-
-#page5_Text {
-  font-size: 3rem;
-  cursor: pointer;
-  transition: opacity 0.5s ease-in-out;
-  color: #704123;
-  text-align: center;
-  /* padding: 10px; */
-}
-
-/* ------------------
- end page 5
------------------ */
-
-
-
-/* Media Query section */
-@media only screen and (max-width: 500px) {
-  /* #first-fridge {
-    min-height: 200vw;
-    max-height: 210vw;
-  }
-
-  #shelf {
-    visibility: hidden;
-  }
-
-  .fridge {
-    --fridgeW: 50vw;
-  }
-
-  #food {
-    visibility: hidden;
-  } */
-  #first-fridge{
-    height: 750px;
-    --fridge-w: 150px;
-  }
-}
-
-.stop-scrolling {
-  height: 100%;
-  overflow: hidden;
-}
-
-/* ทำรูปของต้นน้ำ */
-
-
-.image-container {
-  position: absolute;
-  width: 100px;
-  height: 100px;
-  cursor: pointer;
-}
-
-/* #animatedImage {
-  position: absolute;
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  opacity: 0;
-  /* ตั้งค่าความคมชัดเริ่มต้นเป็น 0 */
-/* transition: opacity 0.5s ease-in-out; */
-/* ใช้ transition เพื่อทำแอนิเมชันของความคมชัด */
-}
-
-/* @media (max-width: 400px) {
-  #shelf {
-        background-size: auto 1080px;
+@media screen and (min-width: 768px) {
+    .desktop {
+        display: block;
     }
-} */
 
-
-.pic_postit{
-    width: 50px;
-}
-.pic_postit:hover {
-  cursor: pointer;
-  transform: scale(1.2);
-}
-.modal {
-    display: none;
-    position: fixed;
-    z-index: 100;
-    padding-top: 50px;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    background-color: rgba(0,0,0,0.9);
-}
-
-/* Modal Content (image) */
-.modal-content {
-    margin: auto;
-    display: block;
-    width: 30%;
-    max-width: 800px;
-}
-
-/* Close button */
-.close {
-    position: absolute;
-    top: 10px;
-    right: 25px;
-    color: white;
-    font-size: 35px;
-    font-weight: bold;
-    cursor: pointer;
-}
-
-.close:hover {
-    color: #999;
-}
-
-/* Container for the image and caption */
-.image-container {
-    text-align: center;
-    margin: 24px 0;
-    position: relative;
-}
-
-.image-container img {
-    /* border: 3px solid #ddd;
-    border-radius: 4px; */
-    cursor: pointer;
-    transition: 0.3s;
-}
-
-.image-container img:hover {
-    border: 3px solid #777;
-}
-
-/* Style the caption text */
-.caption {
-    margin: 10px 0;
-    color: #ccc;
-    font-size: 18px;
-    text-align: center;
+    .mobile {
+        display: none;
+    }
 }
